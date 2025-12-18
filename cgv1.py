@@ -63,7 +63,7 @@ soup=BeautifulSoup(driver.page_source,"html.parser")
 sect_movie_chart=soup.select_one(".cnms01010_chartSection__SjydY")
 movie_chart=sect_movie_chart.select("li")
 
-#  2) 일단 1~3개만 테스트
+#  2) 일단 10개만 테스트
 for i, movie in enumerate(movie_chart[:10]):
     title = movie.select_one(".bestChartList_name__sZyhY").text.strip()
     print("제목:", title)
@@ -131,7 +131,7 @@ for i, movie in enumerate(movie_chart[:10]):
 
     # print("-"*40)
 
-    # ✅ 6) 뒤로가기(다음 영화 처리 위해)
+    #  뒤로가기(다음 영화 처리 위해)
     driver.back()
     time.sleep(2)
 
